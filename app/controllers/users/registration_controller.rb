@@ -20,8 +20,8 @@ module Users
 
     # private
 
-    # def sign_up_params
-    #   params.permit(:email, :password, :password_confirmation)
-    # end
+    def sign_up_params
+      params.permit(:email, :password, :password_confirmation, :first_name, :last_name, :birthdate)
+    end
   end
 end
