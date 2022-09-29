@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+if User.blank? && Rails.env.development
+  puts "Creating Users..."
+  30.times do
+    print "."
+    User.create(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: SecureRandom.base36,
+      birthdate: Faker::Date.birthday
+    )
+  end
+  puts "\n"
+end
+
+puts "Finished"

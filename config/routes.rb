@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     authentication: 'users/authentication',
   }
   post "/users/reactivate", to: "users#reactivate"
+  get "/users/search", to: "users#search"
 end

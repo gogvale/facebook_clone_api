@@ -51,3 +51,9 @@ end
 
 gem "api_guard", "~> 0.6.0"
 gem "bcrypt", "~> 3.1"
+
+gem "pg_search", "~> 2.3"
+
+gem "faker", "~> 2.23"
+
+gem "kaminari", "~> 1.2"

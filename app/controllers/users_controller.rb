@@ -13,4 +13,9 @@ class UsersController < ApplicationController
       render_error(422, message: I18n.t('api_guard.authentication.invalid_login_credentials'))
     end
   end
+
+  def search
+    @users = User.search_by_name(params[:query]).page(params[:page] || 1)
+    render json: { users: @users, meta: KaminariHelper.pagination_meta(@users) }, status: :ok
+  end
 end
