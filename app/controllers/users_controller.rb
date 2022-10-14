@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_and_set_user
+  skip_before_action :authenticate_and_set_user, only: [:reactivate]
 
   def reactivate
     @current_user = User.find_by_email(params[:email])

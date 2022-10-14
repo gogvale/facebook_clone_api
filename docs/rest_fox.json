@@ -1,0 +1,98 @@
+{
+  "exportedFrom": "Restfox-1.0.0",
+  "collection": [
+    {
+      "_id": "EuK2m_ZxzMY_UkzS9w4vP",
+      "_type": "request",
+      "name": "Login",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n    \"email\": \"{{user.email}}\",\n    \"password\":\"{{user.password}}\"\n}"
+      },
+      "parentId": "UwNp_EhI2a4YGIzJVRJG8",
+      "workspaceId": "CB_fj3qftqwBBI_Ycn0e_",
+      "sortOrder": 1,
+      "url": "{{host}}/users/sign_in",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "FCHzhpqAJXE0xPNxo-YKz",
+      "_type": "request",
+      "name": "Register",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n    \"email\": \"{{user.email}}\",\n    \"password\": \"{{user.password}}\",\n    \"first_name\": \"Admin\",\n    \"last_name\": \"Account\",\n    \"birthdate\": \"26/12/1995\"\n}"
+      },
+      "parentId": "UwNp_EhI2a4YGIzJVRJG8",
+      "workspaceId": "CB_fj3qftqwBBI_Ycn0e_",
+      "sortOrder": 0,
+      "url": "{{host}}/users/sign_up",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "SrDy3uVvFNrrtCvNDVX-7",
+      "_type": "request_group",
+      "name": "Search",
+      "children": [],
+      "parentId": "Uol7Fub78tj-0iyB_ybD1",
+      "workspaceId": "CB_fj3qftqwBBI_Ycn0e_",
+      "sortOrder": 0,
+      "collapsed": false
+    },
+    {
+      "_id": "Uol7Fub78tj-0iyB_ybD1",
+      "_type": "request_group",
+      "name": "Users",
+      "children": [],
+      "parentId": null,
+      "workspaceId": "CB_fj3qftqwBBI_Ycn0e_",
+      "sortOrder": 0
+    },
+    {
+      "_id": "UwNp_EhI2a4YGIzJVRJG8",
+      "_type": "request_group",
+      "name": "Session",
+      "children": [],
+      "parentId": "Uol7Fub78tj-0iyB_ybD1",
+      "workspaceId": "CB_fj3qftqwBBI_Ycn0e_",
+      "sortOrder": 1,
+      "collapsed": false
+    },
+    {
+      "_id": "aOTja1S1_sBqDm2HGpL_P",
+      "_type": "request",
+      "name": "Search Users",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n    \"query\": \"Jonas\",\n    \"page\": 1\n}"
+      },
+      "parentId": "SrDy3uVvFNrrtCvNDVX-7",
+      "workspaceId": "CB_fj3qftqwBBI_Ycn0e_",
+      "sortOrder": 0,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{user.token}}"
+        }
+      ],
+      "url": "{{host}}/users/search"
+    }
+  ]
+}

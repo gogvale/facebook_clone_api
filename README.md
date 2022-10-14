@@ -24,4 +24,4 @@
 - [ ] Update `users#show` and `users#index` (is_friend, is_current_user)
 - [ ] Allow real facebook login with omniauth library
 - [ ] Send welcome email when user creates account
-- [ ] Create Documentation (OpenAPI?)
+- [ ] Create Documentation [(OpenAPI?)](https://www.digitalocean.com/community/tutorials/how-to-create-documentation-for-your-rest-api-with-insomnia)
